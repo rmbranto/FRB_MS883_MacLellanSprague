@@ -1,7 +1,5 @@
 # SJHBr-Bottom-Fauna
-
-Source of data:</br>
-<strong>Follow this link for the original publication:</strong></br> http://www.dfo-mpo.gc.ca/Library/30300.pdf</br></br>
+</br><strong>Follow this link for the original publication: </strong>http://www.dfo-mpo.gc.ca/Library/30300.pdf</br></br>
 <strong>FISHERIES RESEARCH BOARD OF CANADA MANUSCRIPT REPORT SERIES (BIOLOGICAL)</strong></br>
 <strong>No.</strong> 883</br>
 <strong>TITLE:</strong> Bottom fauna of Saint John Harbour and estuary as surveyed in 1959 and 1961. Detailed record of identifications and other data.</br> 
