@@ -3,7 +3,7 @@
 Source of data:</br>
 
 <strong>FISHERIES RESEARCH BOARD OF CANADA MANUSCRIPT REPORT SERIES (BIOLOGICAL) No.</strong> 883</br>
-<strong>TITLE:</strong> Bottom fauna of Saint John Harbour and estuary as surveyed in 1959 and 1961. Detailed record of identifications and other data. 
+<strong>TITLE:</strong> Bottom fauna of Saint John Harbour and estuary as surveyed in 1959 and 1961. Detailed record of identifications and other data.</br> 
 <strong>AUTHORSHIP:</strong> Delphine, C. Maclellan and J .B. Sprague</br> 
 <strong>Establishment:</strong> Biological Station St. Andrews, N.B.</br>
 <strong>Dated:</strong> December 1966</br>
