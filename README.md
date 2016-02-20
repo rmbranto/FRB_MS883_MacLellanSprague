@@ -9,6 +9,6 @@ Source of data:</br>
 <strong>Establishment:</strong> Biological Station St. Andrews, N.B.</br>
 <strong>Dated:</strong> December 1966</br>
 
-<strong>Follow this link for the original publication:</strong> http://www.dfo-mpo.gc.ca/Library/30300.pdf</br>
-<strong>Follow this link map showing sampling locations:</strong> "https://www.google.ca/maps/@45.2735447,-66.1538143,12z/data=!3m1!4b1!4m2!6m1!1szffcwx5lQc60.kKYablDNDFw0?hl=en"</br>
+<strong>Follow this link for the original publication:</strong></br> http://www.dfo-mpo.gc.ca/Library/30300.pdf</br>
+<strong>Follow this link for Google map showing sampling locations:</strong></br> "https://www.google.ca/maps/@45.2735447,-66.1538143,12z/data=!3m1!4b1!4m2!6m1!1szffcwx5lQc60.kKYablDNDFw0?hl=en"</br>
 
