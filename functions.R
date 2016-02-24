@@ -1,4 +1,14 @@
+# R Branton Feb 2016
+# normalize (i.e melt) McLelland spreadsheet tables
+
+#install.packages("XLConnect")
+library(XLConnect)
+#install.packages("reshape2")
+library('reshape2')
+
 get.lz<-function(sheet.name){
+  
+# process the counts and weights tables 
   
   # read specified sheet from workbook 
   z<-readWorksheet(
@@ -24,7 +34,7 @@ get.lz<-function(sheet.name){
     -1*ncols                
     ]
   
-  # create long form table: "station" "sample" "taxa" "observation"  
+  # create long form table (i.e normalize) : "station" "sample" "taxa" "observation"  
   lz<-melt(                 
     z,
     id.vars=c(1:2),
@@ -40,7 +50,9 @@ get.lz<-function(sheet.name){
 }
 
 get.dates<-function(sheet.name){
-  
+
+# get and process the date/depth tables 
+    
   # read specified sheet from workbook 
   z<-readWorksheet(
     wb,

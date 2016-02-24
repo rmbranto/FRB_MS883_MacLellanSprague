@@ -1,8 +1,9 @@
 # RMBranton Feb 2016 
 # process Maclellan_Sprague(1966) data
 
+#install.packages("XLConnect")
 library(XLConnect)
-library('reshape2')
+#install.packages("plyr")
 library(plyr)
 
 source('functions.r')

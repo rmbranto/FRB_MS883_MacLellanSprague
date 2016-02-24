@@ -1,6 +1,7 @@
 # RMBranton Feb 2016 
 # use stations to create bounding box
 
+#install.packages("shapefiles")
 library(shapefiles)
 
 # read metadata and station.csv and determine spatial extent
