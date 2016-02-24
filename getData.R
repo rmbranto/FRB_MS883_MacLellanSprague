@@ -74,12 +74,12 @@ get.dates<-function(sheet.name){
 }
 
 wb<-loadWorkbook(
-  "occurrences.xlsx"
+  "occurrences_MacLellanSprague_v2.xlsx"
 )
 
 lz.counts<-NULL
 
-for (sheet.name in getSheets(wb)[2:5]){
+for (sheet.name in getSheets(wb)[3:6]){
   cat(paste('processing:',sheet.name),'\n')
   lz.counts<-rbind(lz.counts,get.lz(sheet.name))  
 }
@@ -90,7 +90,7 @@ lz.counts$year[lz.counts$year=='Table II'|lz.counts$year=='Table IV']<-'1961'
 
 lz.wgts<-NULL
 
-for (sheet.name in getSheets(wb)[6:9]){
+for (sheet.name in getSheets(wb)[7:10]){
   cat(paste('processing:',sheet.name),'\n')
   lz.wgts<-rbind(lz.wgts,get.lz(sheet.name))  
 }
@@ -101,7 +101,7 @@ lz.wgts$year[lz.wgts$year=='Table VI'|lz.wgts$year=='Table VIII']<-'1961'
 
 lz.shells<-NULL
 
-for (sheet.name in getSheets(wb)[10]){
+for (sheet.name in getSheets(wb)[12]){
   cat(paste('processing:',sheet.name),'\n')
   lz.shells<-rbind(lz.shells,get.lz(sheet.name))  
 }
@@ -158,17 +158,29 @@ lz.final<-merge(
   all.x=T)
 
 # merge with taxa list
-wb.taxa<-loadWorkbook("matched_taxa.xlsx")
-taxa<-readWorksheet(wb.taxa,sheet=1,header=T)
+wb.taxa<-loadWorkbook("occurrences_MacLellanSprague_v2.xlsx")
+taxa<-readWorksheet(wb.taxa,sheet='WoRMS_Matched',header=T)
+
+taxa<-rename(taxa,c('spnumber'='taxa'))
+taxa$taxa<-gsub('*','',taxa$taxa,fixed=T)
 
 lz.final<-merge(
   x=lz.final,
-  y=taxa[,c('taxa','Original.Names','ScientificName_accepted')],
+  y=taxa[,c('taxa','originalname','ScientificName_accepted','AphiaID_accepted')],
   by='taxa',
   all.x=T)
 
-lz.final<-lz.final[,c(2,3,5,10,11,4,6,1,12,13,7:9)]
+lz.final<-lz.final[,c(2,3,5,10,11,4,6,1,12:14,7:9)]
+
+source('metadata.r')
+lz.final<-merge(x=metadata,y=lz.final)
+
+lz.final$WoRMSLink<-
+  paste("http://www.marinespecies.org/aphia.php?p=taxdetails&id=",
+        lz.final$AphiaID_accepted,
+        sep='')
 
 write.csv(lz.final,'occurrences.csv')
+write.csv(lz.final,'occurrences_MaclellanSprague.csv')
 
 
