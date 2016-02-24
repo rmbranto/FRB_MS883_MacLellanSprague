@@ -6,6 +6,13 @@ library(XLConnect)
 #install.packages("plyr")
 library(plyr)
 
+#CatalogNumber<-paste(year,station,date,sample,taxa, sep="_"),
+#OccurrenceID<-paste(datasetID, CatalogNumber, sep="_"),
+#EventID<-paste(year,station,date, sep="_"),
+#FieldNumber<-paste(date,station,sample, sep=""),
+
+
+
 source('functions.r')
 
 wb<-loadWorkbook(
@@ -101,11 +108,11 @@ taxa$taxa<-gsub('*','',taxa$taxa,fixed=T)
 
 lz.final<-merge(
   x=lz.final,
-  y=taxa[,c('taxa','originalname','ScientificName_accepted','AphiaID_accepted')],
+  y=taxa,
   by='taxa',
   all.x=T)
 
-lz.final<-lz.final[,c(2,3,5,10,11,4,6,1,12:14,7:9)]
+#lz.final<-lz.final[,c(2,3,5,10,11,4,6,1,12:14,7:9)]
 
 source('metadata.r')
 lz.final<-merge(x=metadata,y=lz.final)
