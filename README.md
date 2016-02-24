@@ -12,5 +12,5 @@
 <strong>Rscripts include:</strong></br>
 functions.r - read and pivot spreadsheet tables</br>
 metadata.r - create DwC project metadata record as a .csv</br>
-bounding_box.r - create shapefile for project bounding box</br>
-get_data.r - create DwC occurrence records as .csv</br>
+create_bounding_box.r - create shapefile for project bounding box</br>
+getData.r - create DwC occurrence records as .csv</br>
