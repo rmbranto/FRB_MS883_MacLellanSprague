@@ -14,3 +14,4 @@ functions.r - read and pivot spreadsheet tables</br>
 metadata.r - create DwC project metadata record as a .csv</br>
 create_bounding_box.r - create shapefile for project bounding box</br>
 getData.r - create DwC occurrence records as .csv</br>
+write_ipt.r - create file for IPT
