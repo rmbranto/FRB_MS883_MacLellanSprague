@@ -17,7 +17,7 @@ metadata<-data.frame(
   BasisOfRecord='HumanObservation',
   OrganismQuantityType='individuals',
   SamplingProtocol='Vessel held on station and benthic sample collected using a van Veen sampler (nominal sampling area of 0.1 sq. metres)',
-  sampleSizeValue=0.1,
+  sampleSizeValue='0.1',
   sampleSizeUnit='square metre',
   Habitat='benthic',
   occurrenceStatus='present',
