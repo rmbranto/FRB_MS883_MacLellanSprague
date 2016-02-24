@@ -9,8 +9,7 @@
 
 <strong>Follow this link for Google map showing sampling locations:</strong></br> "https://www.google.ca/maps/@45.2735447,-66.1538143,12z/data=!3m1!4b1!4m2!6m1!1szffcwx5lQc60.kKYablDNDFw0?hl=en"</br>
 
-<strong>Rscripts include:</strong></br></br>
-
+<strong>Rscripts include:</strong></br>
 functions.r - read and pivot spreadsheet tables</br>
 metadata.r - create DwC project metadata record as a .csv</br>
 bounding_box.r - create shapefile for project bounding box</br>
