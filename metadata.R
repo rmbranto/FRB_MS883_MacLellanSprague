@@ -3,6 +3,7 @@
 write.csv(
   com<-data.frame(
     CollectionCode='FRB Manuscript report series (biological) No.883',
+    Citation='Delphine C. Maclellan and J .B. Sprague, 1966,  Bottom fauna of Saint John Harbour and estuary as surveyed in 1959 and 1961. Fisheries Research Board Of Canada Manuscript Report Series (Biological), No. 883.',
     Type='Event',
     Modified='2016-02-24',
     institutionCode='Atlantic Biological Station',

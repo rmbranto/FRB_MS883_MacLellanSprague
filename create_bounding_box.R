@@ -3,12 +3,10 @@
 
 library(shapefiles)
 
-# read station.csv and determine spatial extent
-<<<<<<< HEAD
-citation<-'Delphine C. Maclellan and J .B. Sprague, 1966,  Bottom fauna of Saint John Harbour and estuary as surveyed in 1959 and 1961. Fisheries Research Board Of Canada Manuscript Report Series (Biological), No. 883.'
-=======
+# read metadata and station.csv and determine spatial extent
 
->>>>>>> origin/master
+source('metadata.R')
+
 stations<-read.csv('stations.csv',as.is=T)
 xlim<-range(stations$longitude)
 ylim<-range(stations$latitude)
@@ -22,11 +20,7 @@ dd<-data.frame(
   Y=c(ylim[1]-my.buf,ylim[2]+my.buf,ylim[2]+my.buf,ylim[1]-my.buf,ylim[1]-my.buf),
   stringsAsFactors=F)
 
-<<<<<<< HEAD
-ddTable<-data.frame(Id=1,comment=citation,stringsAsFactors=F)
-=======
-ddTable<-data.frame(Id=1,comment='bounding box',stringsAsFactors=F)
->>>>>>> origin/master
+ddTable<-data.frame(Id=1,metadata,stringsAsFactors=F)
 ddShapefile <- convert.to.shapefile(dd, ddTable, 'Id', 5)
 write.shapefile(ddShapefile, 'bBox', arcgis=T)
 zip('bBox.zip',c('bBox.shp','bBox.shx','bBox.dbf'))
