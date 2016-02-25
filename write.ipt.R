@@ -29,4 +29,4 @@ ipt<-data.frame(
   stringsAsFactors = F
   )
 
-write.csv(ipt,'ipt.csv')
+write.csv(ipt,'ipt.csv',na='')

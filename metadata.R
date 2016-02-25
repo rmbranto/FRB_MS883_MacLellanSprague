@@ -35,4 +35,4 @@ metadata<-data.frame(
   IdentifiedBy='FRB (Delphine C. Maclellan)',
   stringsAsFactors = F)
     
-write.csv(metadata,file='metadata,csv')
+write.csv(metadata,file='metadata,csv',na='')
