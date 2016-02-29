@@ -6,22 +6,15 @@ library(XLConnect)
 #install.packages("plyr")
 library(plyr)
 
-#CatalogNumber<-paste(year,station,date,sample,taxa, sep="_"),
-#OccurrenceID<-paste(datasetID, CatalogNumber, sep="_"),
-#EventID<-paste(year,station,date, sep="_"),
-#FieldNumber<-paste(date,station,sample, sep=""),
-
-
-
 source('functions.r')
 
 wb<-loadWorkbook(
-  "occurrences_MacLellanSprague_v2.xlsx"
+  "occurrences_MacLellanSprague_v4.xlsx"
 )
 
 lz.counts<-NULL
 
-for (sheet.name in getSheets(wb)[3:6]){
+for (sheet.name in c('Table I','Table II','Table III','Table IV')){
   cat(paste('processing:',sheet.name),'\n')
   lz.counts<-rbind(lz.counts,get.lz(sheet.name))  
 }
@@ -32,7 +25,7 @@ lz.counts$year[lz.counts$year=='Table II'|lz.counts$year=='Table IV']<-'1961'
 
 lz.wgts<-NULL
 
-for (sheet.name in getSheets(wb)[7:10]){
+for (sheet.name in c('Table V','Table VI','Table VII','Table VIII')){
   cat(paste('processing:',sheet.name),'\n')
   lz.wgts<-rbind(lz.wgts,get.lz(sheet.name))  
 }
@@ -41,12 +34,7 @@ lz.wgts<-rename(lz.wgts,c('sheet'='year','observation'='wgt'))
 lz.wgts$year[lz.wgts$year=='Table V'|lz.wgts$year=='Table VII']<-'1959'
 lz.wgts$year[lz.wgts$year=='Table VI'|lz.wgts$year=='Table VIII']<-'1961'
 
-lz.shells<-NULL
-
-for (sheet.name in getSheets(wb)[12]){
-  cat(paste('processing:',sheet.name),'\n')
-  lz.shells<-rbind(lz.shells,get.lz(sheet.name))  
-}
+lz.shells<-get.lz('Table X')  
 
 lz.shells<-rename(lz.shells,c('sheet'='year','observation'='shells'))
 lz.shells$year<-'1961'
@@ -100,8 +88,8 @@ lz.final<-merge(
   all.x=T)
 
 # merge with taxa list
-wb.taxa<-loadWorkbook("occurrences_MacLellanSprague_v2.xlsx")
-taxa<-readWorksheet(wb.taxa,sheet='WoRMS_Matched',header=T)
+#wb.taxa<-loadWorkbook("occurrences_MacLellanSprague_v4.xlsx")
+taxa<-readWorksheet(wb,sheet='WoRMS_Matched',header=T)
 
 taxa<-rename(taxa,c('spnumber'='taxa'))
 taxa$taxa<-gsub('*','',taxa$taxa,fixed=T)
@@ -125,4 +113,5 @@ lz.final$WoRMSLink<-
 write.csv(lz.final,'occurrences.csv')
 write.csv(lz.final,'occurrences_MaclellanSprague.csv')
 
+wz<-lz.final
 

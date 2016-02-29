@@ -1,0 +1,17 @@
+> extents()
+temporal extent= -3685 -2989 
+spatial extent= longitude= -66.18705 -66.03099 
+spatial extent= latitude= 45.21391 45.3332 
+depth range = 3 54 
+taxonRanks = 5 6 18 1 34 
+taxanomic extent: kingdom = Animalia 
+taxanomic extent= phylum= Annelida Arthropoda Brachiopoda Cephalorhyncha Chordata Mollusca Nemertea 
+taxanomic extent= class= Ascidiacea Bivalvia Clitellata Gastropoda Malacostraca Pelecypoda Polychaeta Priapulida Rhynchonellata 
+taxanomic extent= order= Amphipoda Cardiida Carditida Cephalaspidea Cumacea Decapoda Eunicida Isopoda Myida Mysida Mytilida Nuculida Phyllodocida Sessilia Spionida Terebellida Terebratulida 
+taxanomic extent= genus= Ammotrypane Antinoella Aricidea Astarte Balanus Chiridotea Cirratulus Clymenella Cossura Crangon Cyathura Diastylis Edotia Eteone Eudorella Gammarus Glycera Goniada Harmothoe Hippomedon Jaera Leptocheirus Lumbrineris Macoma Maldanopsis Michtheimysis Microphthalmus Mya Mytilus Nephtys Nereis Ninoe Nucula Ophelia Paraonis Pherusa Phyllodoce Pista Polydora Prionospio Scalibregma Scolecolepides Scoloplos Sternaspis Sthenelais Streblospio Terebellides Terebratulina Trochochaeta Unciola 
+taxanomic extent= species= 
+> table(taxonRank(unique(wz[,c('Kingdom','Phylum','Class','Order','Family','Genus','Species')])))
+
+  class  family   genus  phylum species 
+      5       6      18       1      34 
+> 

@@ -20,12 +20,12 @@ metadata<-data.frame(
   sampleSizeValue='0.1',
   sampleSizeUnit='square metre',
   Habitat='benthic',
-  occurrenceStatus='present',
   country='Canada',
   stateProvince='New Brunswick',
   verbatimLocality='Saint John Harbour and estuary',
   geodeticDatum='WGS84',
-  ContinentOcean='Atlantic',
+  continent='North America',
+  waterBody='Atlantic Ocean',
   GeoreferenceProtocol='OBIS Canada Georeference Guidelines',
   georeferencedBy='Robert Branton (OBIS Canada)',
   georeferencedDate='2016-02-18',
@@ -35,4 +35,4 @@ metadata<-data.frame(
   IdentifiedBy='FRB (Delphine C. Maclellan)',
   stringsAsFactors = F)
     
-write.csv(metadata,file='metadata,csv',na='')
+write.csv(metadata,file='metadata.csv',na='')
