@@ -70,4 +70,5 @@ wz<-merge(x=metadata,y=wz)
 source('write.ipt.R')
 extents()
 }
+get.wz('occurrences_MacLellanSprague_v5.xlsx')
 
