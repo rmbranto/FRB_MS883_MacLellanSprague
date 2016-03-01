@@ -10,8 +10,11 @@
 <strong>Follow this link for Google map showing sampling locations:</strong></br> "https://www.google.ca/maps/@45.2735447,-66.1538143,12z/data=!3m1!4b1!4m2!6m1!1szffcwx5lQc60.kKYablDNDFw0?hl=en"</br>
 
 <strong>Rscripts include:</strong></br>
-functions.r - read and pivot spreadsheet tables</br>
+functions.r* - read and pivot spreadsheet tables</br>
 metadata.r - create DwC project metadata record as a .csv</br>
 create_bounding_box.r - create shapefile for project bounding box</br>
-getData.r - create DwC occurrence records as .csv</br>
-write_ipt.r - create file for IPT
+getData.r* - create DwC occurrence records as .csv</br>
+write_ipt.r - create file for IPT</br>
+</br>
+*v2 currently under development are expected to read data from other projects not just McLellandSpargue</br>
+
